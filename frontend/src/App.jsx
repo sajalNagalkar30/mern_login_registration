@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Students from './pages/Students';
-import axios from "axios";
+import api from './api/axios';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -16,9 +16,7 @@ function App() {
       const token = localStorage.getItem("token");
       if (token) {
         try {
-          const response = await axios.get('/api/users/me', {
-            headers: { Authorization: `Bearer ${token}` }
-          });
+          const response = await api.get('/api/users/me');
           setUser(response.data);
         } catch {
           localStorage.removeItem("token");
