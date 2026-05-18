@@ -24,8 +24,8 @@ const Login = ({ setUser }) => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border border-gray-200">
+        <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
+            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md border border-gray-200">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
                 {error && <p className="text-red-500 mb-4 text-sm">{error}</p>}
                 <form onSubmit={handleSubmit}>
@@ -36,7 +36,7 @@ const Login = ({ setUser }) => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="you@example.com"
-                            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
                     </div>
                     <div className="mb-6">
@@ -46,13 +46,13 @@ const Login = ({ setUser }) => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="••••••••"
-                            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
                     </div>
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition disabled:opacity-60"
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-medium transition disabled:opacity-60 text-sm"
                     >
                         {loading ? 'Logging in...' : 'Login'}
                     </button>
